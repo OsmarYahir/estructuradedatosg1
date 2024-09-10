@@ -17,7 +17,6 @@ public class Serie {
         // }
         this.n = (n <= 0) ? 1 : n;
 
-        
     }
 
     public int getN() {
@@ -25,35 +24,46 @@ public class Serie {
     }
 
     public void setN(int n) {
-        this.n = (n > 0)?n:1;
+        this.n = (n > 0) ? n : 1;
 
     }
 
-    public double calcularFor(){
+    public double calcularFor() {
         double r = 0.0;
         double constante = 1.0;
         for (int i = 1; i <= this.n; i++) {
-            r+= constante/i;
+            r += constante / i;
         }
         return r;
     }
 
-    public double calcularWhile(){
+    public double calcularWhile() {
         double r = 0.0;
         double constante = 1.0;
         double i = 1;
-        
-        while (i <=this.n) {
-            r+=constante/i;
+
+        while (i <= this.n) {
+            r += constante / i;
             i++;
         }
         return r;
     }
 
-    @Override
-    public String toString() {
-        return "Serie [n=" + n + "]";
+    public double calcularDoWhile() {
+        int i = 1;
+        double r = 0.0;
+        double constante = 1.0;
+        do {
+            r += constante / i;
+            i++;
+        } while (i <= this.n);
+
+        return r;
     }
 
-    
+    @Override
+    public String toString() {
+        return  "Serie [n=" + n + "]";
+    }
+
 }
